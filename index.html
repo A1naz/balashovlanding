@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СОФТСЕЛЛ</title>
+  <link rel="icon" type="image/svg+xml" href="./images/harmex.svg">
+
+  <meta property="og:url" content="http://balashov.harmex.ru" />
+  <meta property="og:title" content="HARMEX " />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="images/harmex.svg"
+  />
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <article>
+      <div class="title-container">
+        <h1><span>Магазин</span> СОФТСЕЛЛ</h1>
+        <p>ИП Балашов А.Э </p>
+      </div>
+      <div class="links">
+        <button id="servicesBtn">Мои услуги</и>
+        <button id="requisitesBtn">Мои реквизиты</button>
+      </div>
+      <div class="content" id="contentContainer">
+        <div id="servicesContainer" class="content-section ">
+          <div class="two-cols">
+            <div class="content-block col-span-3 cart-img">
+              <p class="top-text">Заказы товаров<br><span class="top-light-text">более 10.000 заказов в месяц</span></p>
+              <p class="bottom-text">50+ площадок</p>
+            </div>
+            <div class="content-block col-span-2 like-img">
+              <p class="top-text">Оценка товаров<br><span class="top-light-text">более 2.000 оценок в месяц</span></p>
+              <p class="bottom-text">25 площадок</p>
+            </div>
+          </div>
+          <div class="three-cols">
+            <div class="content-block point-img">
+              <p class="top-text">Оценка ПВЗ<br><span class="top-light-text">более 300 оценок в месяц</span></p>
+              <p class="bottom-text">10.000 ПВЗ</p>
+            </div>
+            <div class="content-block star-img">
+              <p class="top-text">Оценка площадок<br><span class="top-light-text">более 10 оценок в месяц</span></p>
+              <p class="bottom-text">50+ площадок</p>
+            </div>
+            <div class="content-block delivery-img">
+              <p class="top-text">Оценка работы с брендом<br><span class="top-light-text">более 1.000 оценок в месяц</span></p>
+              <p class="bottom-text">250 брендов</p>
+            </div>
+          </div>
+        </div>
+        <div id="requisitesContainer" class="content-section">
+          <div class="two-cols">
+            <div class="content-block col-span-3 bank-img">
+              <p class="top-text">Банк<br><span class="top-light-text">
+                Наименование банка ПРИВОЛЖСКИЙ Ф-Л ПАО "ПРОМСВЯЗЬБАНК"<br>
+                БИК 042202803<br>
+                Корреспондентский счёт 30101810700000000803<br>
+                Счёт получателя 40802810903000164001<br>
+                Наименование клиента ИП БАЛАШОВ АНДРЕЙ ЭДУАРДОВИЧ<br>
+                ИНН 644651000810<br>
+              </span></p>
+              <!-- <p class="bottom-text">50+ площадок</p> -->
+            </div>
+            <div class="content-block col-span-2 doc2-img">
+              <p class="top-text">ОГРНИП<br><span class="top-light-text">323645700117862</span></p>
+              <!-- <p class="bottom-text">25 площадок</p> -->
+            </div>
+          </div>
+          <div class="three-cols">
+            <div class="content-block doc1-img">
+              <p class="top-text">ИНН<br><span class="top-light-text">644651000810</span></p>
+              <!-- <p class="bottom-text">50+ площадок</p> -->
+            </div>
+            <div class="content-block time-img">
+              <p class="top-text">На Harmex<br><span class="top-light-text">c 14.12.2024</span></p>
+              <!-- <p class="bottom-text">10.000 ПВЗ</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </article>
+  </main>
+
+  <script>
+    const servicesBtn = document.getElementById('servicesBtn');
+    const requisitesBtn = document.getElementById('requisitesBtn');
+    const servicesContainer = document.getElementById('servicesContainer');
+    const requisitesContainer = document.getElementById('requisitesContainer');
+
+    function toggleContent(activeBtn, inactiveBtn, activeContainer, inactiveContainer) {
+        activeBtn.classList.add('active');
+        inactiveBtn.classList.remove('active');
+
+        inactiveContainer.classList.add('hidden');
+        inactiveContainer.classList.remove('active');
+
+        setTimeout(() => {
+            activeContainer.classList.add('active');
+            activeContainer.classList.remove('hidden');
+        }, 200);
+    }
+
+    servicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleContent(servicesBtn, requisitesBtn, servicesContainer, requisitesContainer);
+    });
+
+    requisitesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleContent(requisitesBtn, servicesBtn, requisitesContainer, servicesContainer);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        servicesBtn.classList.add('active');
+        servicesContainer.classList.add('active');
+    });
+  </script>
+</body>
+</html>
